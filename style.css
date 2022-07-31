@@ -1,0 +1,146 @@
+body {
+  background-color: hsl(30, 38%, 92%);
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  /* padding: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 48px;
+  align-items: center;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    height: 100vh;
+  }
+}
+
+main {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "product"
+    "product-details";
+
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 16px;
+  margin: 32px 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    grid-template-areas: "product product-details";
+    margin: 10px;
+  }
+}
+
+section.product-image {
+  grid-area: product;
+  height: fit-content;
+}
+
+.product-image--mobile {
+  display: block;
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+.product-image--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .product-image--mobile {
+    display: none;
+  }
+
+  .product-image--desktop {
+    display: block;
+    width: 360px;
+    border-radius: 1rem 0 0 1rem;
+  }
+}
+
+section.product-details {
+  padding: 18px 24px;
+  grid-area: product-details;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  section.product-details {
+    width: 300px;
+    gap: 0px;
+  }
+}
+
+section.product-details > .category {
+  color: hsl(228, 12%, 48%);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 0.8rem;
+}
+
+section.product-details > .title {
+  font-family: "Fraunces", serif;
+  color: hsl(212, 21%, 14%);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+@media screen and (min-width: 1440px) {
+  section.product-details > .title {
+    font-size: 3rem;
+  }
+}
+
+section.product-details > .description {
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  line-height: 1.8;
+}
+
+section.product-details > .pricing {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+section.product-details .pricing > .price-deal {
+  font-family: "Fraunces", serif;
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+}
+
+section.product-details .pricing > .price-base {
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+}
+
+section.product-details > button {
+  all: unset;
+  padding: 16px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+section.product-details > button:hover {
+  background-color: hsl(159, 26%, 50%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
